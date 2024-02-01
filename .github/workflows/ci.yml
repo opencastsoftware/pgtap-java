@@ -16,22 +16,22 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4
         with:
           fetch-depth: 0
 
       - name: Validate Gradle Wrapper
-        uses: gradle/wrapper-validation-action@v1
+        uses: gradle/wrapper-validation-action@56b90f209b02bf6d1deae490e9ef18b21a389cd4 # v1
 
       - name: Download Java JDK
-        uses: typelevel/download-java@v2
+        uses: typelevel/download-java@817e8c0d48dc2e88e155a8e4f69ba493bef621be # v2
         id: download-java
         with:
           distribution: temurin
           java-version: 11
 
       - name: Setup Java JDK
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@387ac29b308b003ca37ba93a6cab5eb57c8f5f93 # v4
         with:
           distribution: jdkfile
           java-version: 11
@@ -43,7 +43,7 @@ jobs:
           arguments: build --info
 
       - name: Publish Test Results
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@26f96dfa697d77e81fd5907df203aa23a56210a8 # v4
         if: always()
         with:
           name: test-results
