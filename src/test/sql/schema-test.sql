@@ -11,7 +11,7 @@ SELECT has_table(
 SELECT columns_are(
         'test',
         'conditions',
-        ARRAY ['time', 'location', 'device', 'temperature', 'humidity', 'sunlight_intensity'],
+        ARRAY ['time', 'location', 'device', 'temperature', 'humidity'],
         'The conditions table has the expected columns'
     );
 
