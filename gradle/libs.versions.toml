@@ -1,0 +1,22 @@
+[versions]
+flyway = "9.22.1"
+gradleJavaConventions = "0.1.4"
+jacoco = "0.8.8"
+junit = "5.10.1"
+logback = "1.4.14"
+postgresql = "42.6.0"
+tap4j = "4.4.2"
+testcontainers = "1.19.3"
+
+[libraries]
+flywayCore = { module = "org.flywaydb:flyway-core", version.ref = "flyway" }
+junitJupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit" }
+logback = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+postgresql = { module = "org.postgresql:postgresql", version.ref = "postgresql" }
+tap4j = { module = "org.tap4j:tap4j", version.ref = "tap4j" }
+testcontainersBom = { module = "org.testcontainers:testcontainers-bom", version.ref = "testcontainers" }
+testcontainersJunit = { module = "org.testcontainers:junit-jupiter" }
+testcontainersPostgres = { module = "org.testcontainers:postgresql" }
+
+[plugins]
+gradleJavaConventions = { id = "com.opencastsoftware.gradle.java-conventions", version.ref = "gradleJavaConventions" }
