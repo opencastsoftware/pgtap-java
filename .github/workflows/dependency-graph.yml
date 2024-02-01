@@ -1,0 +1,48 @@
+name: Update Dependency Graph
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate Gradle Wrapper
+        uses: gradle/wrapper-validation-action@v1
+
+      - name: Download Java JDK
+        uses: typelevel/download-java@v2
+        id: download-java
+        with:
+          distribution: temurin
+          java-version: 11
+
+      - name: Setup Java JDK
+        uses: actions/setup-java@v4
+        with:
+          distribution: jdkfile
+          java-version: 11
+          jdkFile: ${{ steps.download-java.outputs.jdkFile }}
+
+      - name: Setup Dependency Graph
+        uses: gradle/gradle-build-action@v2
+        with:
+          dependency-graph: generate-and-submit
+
+      - name: Generate Dependency Graph Snapshot
+        uses: gradle/gradle-build-action@v2
+        env:
+          DEPENDENCY_GRAPH_INCLUDE_CONFIGURATIONS: 'compileClasspath|runtimeClasspath'
+        with:
+          arguments: build
