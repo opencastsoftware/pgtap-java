@@ -1,5 +1,5 @@
 [versions]
-flyway = "9.22.1"
+flyway = "9.22.3"
 gradleJavaConventions = "0.1.4"
 jacoco = "0.8.8"
 junit = "5.10.1"
