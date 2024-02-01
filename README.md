@@ -43,7 +43,7 @@ In order to run pgTAP tests with *pgtap-java*, you must extend the [PgTapTest](.
 
 `PgTapTest` requires 3 constructor parameters:
 
-* `database: PostgreSQLContainer<?>` - a [Testcontainers PostgreSQL](https://java.testcontainers.org/modules/databases/postgres/) database container.
+* `database: PostgreSQLContainer<?>` - a [Testcontainers PostgreSQL](https://java.testcontainers.org/modules/databases/postgres/) database container. This container image must have pgTAP preinstalled. See our [postgres-with-pgtap](https://github.com/opencastsoftware/postgres-with-pgtap/blob/main/Containerfile) Containerfile for an example of how you can do that.
 * `pgTapTestPath: Path` - the path to your pgTAP `.sql` test files
 * `pgTapTmpPath: Path` - the path where the pgTAP `.sql` test files will be mounted inside the PostgreSQL container.
  
