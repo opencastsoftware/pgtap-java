@@ -2,7 +2,7 @@
 flyway = "9.22.3"
 gradleJavaConventions = "0.1.4"
 jacoco = "0.8.8"
-junit = "5.10.1"
+junit = "5.10.2"
 logback = "1.4.14"
 postgresql = "42.6.0"
 tap4j = "4.4.2"
