@@ -4,7 +4,7 @@ gradleJavaConventions = "0.1.4"
 jacoco = "0.8.8"
 junit = "5.11.4"
 logback = "1.5.15"
-postgresql = "42.7.4"
+postgresql = "42.7.12"
 tap4j = "4.4.2"
 testcontainers = "1.20.4"
 
